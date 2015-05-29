@@ -105,7 +105,7 @@
 		
 	</div>
 	
-	<div class="container" ng-app="car" ng-controller="myController">
+	<div class="container" ng-app="carousel" ng-controller="myController">
 	  <div class="panel panel-default">
 		<div class="panel-heading">
 		  <h4 class="panel-title">
@@ -120,18 +120,9 @@
 		</div>
 	  </div>
 	</div>
+	
 	<script>
-		var app1 = angular.module('car',['ui.bootstrap']);
-		
-		app1.controller('myController',function($scope){
-		alert("hello");
-			$scope.isCollapsed = false;
-			alert($scope.isCollapsed);
-			
-		});
-	</script>
-	<script>
-	var app = angular.module('carousel', []);
+	var app = angular.module('carousel', ['ui.bootstrap']);
 	app.controller('folderCtrl', function ($scope, $http) {
 	  $scope.w = window.outerWidth;
 	  $scope.h = window.outerHeight-20;
@@ -161,8 +152,15 @@
 	  $scope.activeFolder = function (folder) {
 		return (folder === $scope.currentFolder) ? 'active' : '';
 	  };
+	  
+	  
 	});
-	
+	app.controller('myController',function($scope){
+		alert("hello");
+			$scope.isCollapsed = false;
+			alert($scope.isCollapsed);
+			
+		});
 	
 	
 	</script>
